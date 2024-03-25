@@ -1,1 +1,1 @@
-web: gunicorn codestar.wsgi
+web: gunicorn the_lunchbar.wsgi
