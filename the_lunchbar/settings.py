@@ -30,7 +30,7 @@ SECRET_KEY = 'django-insecure-6w0h540-+3j8uat*qb3zw$v3zu*n_ig$1r4leq(pl0on)d!$9-
 DEBUG = True
 
 ALLOWED_HOSTS = [ '8000-eugene-gwebu-restaurant-c7zjetzd12.us1.codeanyapp.com',
-',herokuapp.com']
+'pp4-restaurant-booking-f8fec4683622.herokuapp.com']
 
 
 # Application definition
