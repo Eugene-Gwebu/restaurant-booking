@@ -18,9 +18,10 @@ class Booking(models.Model):
             MinValueValidator(1)])
     date = models.DateField() 
     time = models.TimeField()
-    cancel_booking = models.ForeignKey(
-        Guest, on_delete=models.CASCADE, related_name="booking"
+    guest = models.ForeignKey(
+        Guest, on_delete=models.CASCADE, related_name="booking" #
     )
+    cancel = models.BooleanField()
 
 
 
