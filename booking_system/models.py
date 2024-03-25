@@ -21,8 +21,8 @@ class Booking(models.Model):
     guest = models.ForeignKey(
         Guest, on_delete=models.CASCADE, related_name="booking"
     )
-    cancel = models.BooleanField()
-    #update booking 
+    cancel = models.BooleanField(default=False)
+    updated_on = models.DateTimeField(auto_now=True)
 
 
 
