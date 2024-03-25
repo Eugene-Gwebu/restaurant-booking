@@ -3,4 +3,4 @@ from django.http import HttpResponse
 
 # Create your views here.
 def contact_us(request):
-    return HttpResponse("The lunchbar booking system")
+    return HttpResponse("Here is the guest contact info")
