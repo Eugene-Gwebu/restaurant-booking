@@ -6,9 +6,9 @@ from .models import Guest, Booking
 
 
 class BookingForm(generic.ListView):
-    queryset = Guest.objects.all
+    queryset = Guest.objects.all()
     template_name = "booking_form.html"
 
 class BookingForm(generic.ListView):
-     queryset = Booking.objects.all
+     queryset = Booking.objects.all()
      template_name = "booking_form.html"

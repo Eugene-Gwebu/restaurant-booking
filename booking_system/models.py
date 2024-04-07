@@ -11,7 +11,7 @@ class Guest(models.Model):
 
 
 class Booking(models.Model):
-    places = models.IntegerField(
+    places = models.PositiveIntegerField(
         default=1, 
         validators=[
             MaxValueValidator(10), 
