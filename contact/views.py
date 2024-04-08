@@ -1,6 +1,9 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.views import generic
+from .models import Contact
 
 # Create your views here.
-def contact_us(request):
-    return HttpResponse("Here is the guest contact info")
+
+class ContactList(generic.ListView):
+    queryset = Contact.objects.all()
+    template_name = "contact_list.html"
