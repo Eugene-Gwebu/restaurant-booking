@@ -6,4 +6,5 @@ from .models import Contact
 
 class ContactList(generic.ListView):
     queryset = Contact.objects.all()
-    template_name = "contact_list.html"
+    template_name = "contact/contact.html"
+    template_name = "contact/menu.html"

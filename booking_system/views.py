@@ -6,5 +6,10 @@ from .models import Booking
 
 class BookingList(generic.ListView):
      queryset = Booking.objects.all()
-     template_name = "booking_system/booking_list.html"
-     template_name = 
+     template_name = "booking_system/home.html"
+     template_name = "booking_system/index.html"
+
+# class HomeList(generic.ListView):
+#      # queryset = Booking.objects.all()
+#      template_name = "booking_system/home.html"
+    
