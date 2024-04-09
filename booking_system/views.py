@@ -6,4 +6,4 @@ from .models import Booking
 
 class BookingList(generic.ListView):
      queryset = Booking.objects.all()
-     template_name = "booking_list.html"
+     template_name = "booking_system/index.html"

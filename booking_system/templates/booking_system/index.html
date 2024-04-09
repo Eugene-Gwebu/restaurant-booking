@@ -3,50 +3,41 @@
 {% block content %}
 
 <!-- index.html content starts here -->
-<div class="container-fluid">
-    <div class="row">
-
-        <!-- Blog Entries Column -->
-        <div class="col-12 mt-3 left">
-            <div class="row">
-                {% for post in post_list %}
-                <div class="col-md-4">
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <div class="image-container">
-                                <div class="image-flash">
-                                    <p class="author">Author: {{ post.author }}</p>
-                                </div>
-                            </div>
-                            <a href="#" class="post-link">
-                                <h2 class="card-title">{{ post.title }}</h2>
-                            </a>
-
-                            <hr />
-                            <p class="card-text text-muted h6">{{ post.created_on}}
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                {% if forloop.counter|divisibleby:3 %}
+<form class="g-3">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col">
+            <input type="text" class="form-control" placeholder="First name" aria-label="First name">
             </div>
-            <div class="row">
-                {% endif %}
-                {% endfor %}
-
+            <div class="col">
+            <input type="text" class="form-control" placeholder="Last name" aria-label="Last name">
             </div>
         </div>
+        <div class="col-12">
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+            <input type="email" class="form-control" id="inputEmail3">
+        </div>
+        <div class="col-12">
+            <label for="inputEmail3" class="form-label">Phone Number</label>
+            <input type="tel" class="form-control" id="inputPhone">            
+        </div>
+        <div data-mdb-input-init class="form-outline" style="width: 22rem;">
+            <label class="form-label" for="typeNumber">Number of Places</label>
+            <input min="1" max="20" type="number" id="typeNumber" class="form-control" />
+        </div>
+        <div class="row">
+            <div class="col">
+                <label>Date:</label>
+                <input type="date" class="form-control" name="date" required>
+            </div>
+            <div class="col">
+                <label>Time:</label>
+                <input type="time" class="form-control" name="time" required>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit Booking</button> 
     </div>
-    {% if is_paginated %}
-    <nav aria-label="Page navigation">
-        <ul class="pagination justify-content-center">
-            {% if page_obj.has_next %}
-            <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
-            {% endif %}
-        </ul>
-    </nav>
-    {% endif %}
-</div>
+</form>
 
 <!-- index.html content ends here -->
 {% endblock %}
