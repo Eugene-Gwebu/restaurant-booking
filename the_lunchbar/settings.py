@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-6w0h540-+3j8uat*qb3zw$v3zu*n_ig$1r4leq(pl0on)d!$9-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [ '8000-eugene-gwebu-restaurant-c7zjetzd12.us1.codeanyapp.com',
+ALLOWED_HOSTS = [ 'eugenegwebu-restaurantb-3tht2rsvjmc.ws-eu110.gitpod.io',
 'pp4-restaurant-booking-f8fec4683622.herokuapp.com']
 
 
@@ -92,7 +92,7 @@ DATABASES = {
 }
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://*.codeanyapp.com",
+    "https://*.gitpod.io/",
     "https://*.herokuapp.com"
 ]
 
