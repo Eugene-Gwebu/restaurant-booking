@@ -7,4 +7,7 @@ from .models import Contact
 class ContactList(generic.ListView):
     queryset = Contact.objects.all()
     template_name = "contact/contact.html"
-    template_name = "contact/menu.html"
+    
+
+def menu(request):
+    return render(request, 'contact/menu.html')
