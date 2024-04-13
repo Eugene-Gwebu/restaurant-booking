@@ -6,7 +6,8 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 # Create your models here.
 
 class Booking(models.Model):
-    full_name = models.CharField(default='Name Surname', max_length=200, unique=True)
+    first_name = models.CharField(default='Name', max_length=200)
+    last_name = models.CharField(default='Surname', max_length=200)
     email = models.EmailField(default='example@example.com', max_length=200, unique=True)
     phone_number = models.CharField(max_length=40, blank=True, null=True)
     places = models.PositiveIntegerField(
@@ -20,7 +21,7 @@ class Booking(models.Model):
     updated_on = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return f"You have received a booking from {self.full_name} ({self.email}) | on {self.date} | at {self.time}."
+        return f"You have received a booking from {self.first_name} {self.last_name} ({self.email}) | on {self.date} | at {self.time}."
 
 
 

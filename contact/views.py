@@ -8,6 +8,3 @@ class ContactList(generic.ListView):
     queryset = Contact.objects.all()
     template_name = "contact/contact.html"
     
-
-def menu(request):
-    return render(request, 'contact/menu.html')
