@@ -19,6 +19,7 @@ class Booking(models.Model):
     time = models.TimeField()
     cancel = models.BooleanField(default=False)
     updated_on = models.DateTimeField(auto_now=True)
+    approval = models.BooleanField()
 
     def __str__(self):
         return f"You have received a booking from {self.first_name} {self.last_name} ({self.email}) | on {self.date} | at {self.time}."
