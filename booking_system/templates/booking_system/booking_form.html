@@ -4,8 +4,6 @@
 
 {% block content %}
 
-<!-- when users are logged in, they can book a table -->
-<!-- {% if user.is_authenticated %} -->
 <div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-12 col-md-6 my-5">
@@ -20,54 +18,5 @@
     </div>
 </div>
 
-<!-- <form class="row g-3">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col">
-            <input type="text" class="form-control" placeholder="First name" aria-label="First name">
-            </div>
-            <div class="col">
-            <input type="text" class="form-control" placeholder="Last name" aria-label="Last name">
-            </div>
-        </div>
-        <div class="col-12">
-            <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
-            <input type="email" class="form-control" id="inputEmail3">
-        </div>
-        <div class="col-12">
-            <label class="form-label">Phone Number</label>
-            <input type="tel" class="form-control" id="inputPhone">            
-        </div>
-        <div data-mdb-input-init class="form-outline" style="width: 22rem;">
-            <label class="form-label" for="typeNumber">Number of Places</label>
-            <input min="1" max="20" type="number" id="typeNumber" class="form-control" />
-        </div>
-        <div class="row">
-            <div class="col">
-                <label>Date:</label>
-                <input type="date" class="form-control" name="date" required>
-            </div>
-            <div class="col">
-                <label>Time:</label>
-                <input type="time" class="form-control" name="time" required>
-            </div>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit Booking</button> 
-    </div>
-</form> -->
-<!-- {% else %} -->
-
-<!-- if the user isn't logged in, they can sign up -->
-<!-- <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-md-12">
-        <p class="text-center">To book a table, please <a href="{% url 'account_login' %}">log in</a>. If you don't have an account, please <a href="{{ signup_url }}">sign up!</a></p>
-      </div>
-    </div>
-  </div>   -->
-
-  <!-- {% endif %} -->
-
-<!-- index.html content ends here -->
 {% endblock %}
 

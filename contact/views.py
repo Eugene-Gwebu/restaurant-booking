@@ -13,6 +13,15 @@ def contact_form(request):
 
      contact = Contact.objects.all()
 
+     if request.method == "POST":
+          contact_form = ContactForm(data=request.POST)
+          if contact_form.is_valid():
+               contact = contact_form.save()
+               messages.add_message(
+                    request, messages.SUCCESS,
+                    'Your booking was submitted successfully, and will be approved shortly!'
+               )
+
      contact_form = ContactForm()
      
      return render(

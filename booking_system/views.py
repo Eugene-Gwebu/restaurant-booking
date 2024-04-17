@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic 
+from django.contrib import messages
 from .models import Booking
 from django.core.mail import send_mail
 from django.http import HttpResponse
@@ -20,6 +21,15 @@ def home(request):
 def booking_form(request):
 
      booking = Booking.objects.all()
+
+     if request.method == "POST":
+          confirm_booking_form = ConfirmBookingForm(data=request.POST)
+          if confirm_booking_form.is_valid():
+               booking = confirm_booking_form.save()
+               messages.add_message(
+                    request, messages.SUCCESS,
+                    'Your booking was submitted successfully, and will be approved shortly!'
+               )
 
      confirm_booking_form = ConfirmBookingForm()
      
