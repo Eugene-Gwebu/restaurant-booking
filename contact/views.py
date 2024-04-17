@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.views import generic
+from django.contrib import messages
 from .models import Contact
 from .forms import ContactForm
 
@@ -19,7 +20,7 @@ def contact_form(request):
                contact = contact_form.save()
                messages.add_message(
                     request, messages.SUCCESS,
-                    'Your booking was submitted successfully, and will be approved shortly!'
+                    'We have received your request, and will be in touch shortly!'
                )
 
      contact_form = ContactForm()
