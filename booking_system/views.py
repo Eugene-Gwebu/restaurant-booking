@@ -1,10 +1,14 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic 
 from django.contrib import messages
+from django.http import HttpResponseRedirect
 from .models import Booking
 from django.core.mail import send_mail
-from django.http import HttpResponse
 from .forms import ConfirmBookingForm
+from django.contrib.auth.decorators import login_required
+
+
+
 
 # Create your views here.
 
@@ -18,20 +22,22 @@ def home(request):
      return render(request, 'booking_system/home.html')
 
 
+@login_required
 def booking_form(request):
 
      booking = Booking.objects.all()
 
+     confirm_booking_form = ConfirmBookingForm()
      if request.method == "POST":
           confirm_booking_form = ConfirmBookingForm(data=request.POST)
           if confirm_booking_form.is_valid():
                booking = confirm_booking_form.save()
+               
                messages.add_message(
                     request, messages.SUCCESS,
                     'Your booking was submitted successfully, and will be approved shortly!'
                )
 
-     confirm_booking_form = ConfirmBookingForm()
      
      return render(
           request,
@@ -41,6 +47,36 @@ def booking_form(request):
                "confirm_booking_form": confirm_booking_form,
           },
      )
+
+@login_required
+def edit_booking(request, booking_id):
+    """
+    View to edit a booking
+    """
+    booking = get_object_or_404(Booking, id=booking_id)
+    
+    if request.method == "POST":
+        confirm_booking_form = ConfirmBookingForm(data=request.POST, instance=booking)
+        if confirm_booking_form.is_valid():
+            confirm_booking_form.save()
+            messages.success(request, 'Your Booking Has Been Updated!')
+            return redirect('booking_detail', booking_id=booking_id)
+        else:
+            messages.error(request, 'Error updating booking!')
+
+    else:
+        confirm_booking_form = ConfirmBookingForm(instance=booking)
+    
+    return render(request, 'booking_system/booking_info.html', {'confirm_booking_form': confirm_booking_form})
+
+
+
+
+
+
+
+
+
 
      # queryset = Booking.objects.filter(approval=True)
      # booking = get_object_or_404(queryset, email=email)

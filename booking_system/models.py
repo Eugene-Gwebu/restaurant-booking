@@ -8,7 +8,7 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 class Booking(models.Model):
     first_name = models.CharField(default='Name', max_length=200)
     last_name = models.CharField(default='Surname', max_length=200)
-    email = models.EmailField(default='example@example.com', max_length=200, unique=True)
+    email = models.EmailField(default='example@example.com', max_length=200)
     phone_number = models.CharField(max_length=40, blank=True, null=True)
     places = models.PositiveIntegerField(
         default=1, 
@@ -23,6 +23,7 @@ class Booking(models.Model):
 
     def __str__(self):
         return f"You have received a booking from {self.first_name} {self.last_name} ({self.email}) | on {self.date} | at {self.time}."
+
 
 
 
