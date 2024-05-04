@@ -5,28 +5,48 @@
 {% block content %}
 
 <div class="container mt-5">
-    <div class="row justify-content-center">
-        <div class="col-12 col-md-6 my-5">
-            <h2>Book a Table!</h2>
-            <form method="post">
-                {{ confirm_booking_form | crispy }}
-                {% csrf_token %}
-                <div class="row justify-content-center">
-                    <div class="col-md-4">
-                      <button class="btn btn-secondary" type="submit">Submit Booking</button>
-                    </div>
-                    <div class="col-md-4">
-                      <button type="button" class="btn btn-edit"
-                        booking_id="{{ booking.id }}" data-bs-toggle="modal" data-bs-target="#EditBookingModal">
-                        Edit Booking
-                      </button>
-                  </div>
-                </div>
-            </form>
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-6 my-5">
+      <h2>Book a Table!</h2>
+      <form method="post">
+        {{ confirm_booking_form | crispy }}
+        {% csrf_token %}
+        <div class="row justify-content-center">
+          <div class="col-md-4">
+            <button id="submitButton" class="btn btn-secondary" type="submit">Submit Booking</button>
+          </div>
+          <div class="col-md-4 .ms-auto">
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" booking_id="{{ booking.id }}" data-bs-toggle="modal" data-bs-target="#EditBookingModal">
+              Edit Booking
+            </button>
+          </div>
         </div>
+      </form>
     </div>
+  </div>
 </div>
 
+<!-- Modal to edit the booking -->
+
+<div class="modal fade" id="EditBookingModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header justify-content-center">
+        <h5 class="modal-title" id="exampleModalLabel">Change Your Booking Information</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        {% include 'booking_system/edit_booking.html' %}
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}
+
+{% comment %}
 <!-- Modal to edit the booking -->
 
   <div class="modal fade" id="EditBookingModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -37,20 +57,17 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-            {% include 'booking_system/booking_info.html' %}
+          {% include 'booking_system/edit_booking.html' %}
         </div>
       </div>
     </div>
   </div>
 
-  {% endblock %}
-
-  {% comment %}
 <div class="col-md-4 .ms-auto">
-    <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#EditBookingModal">
-        Edit Booking
-    </button>
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#EditBookingModal">
+    Edit Booking
+  </button>
 </div>
 
 {% endcomment %}

@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-6w0h540-+3j8uat*qb3zw$v3zu*n_ig$1r4leq(pl0on)d!$9-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [ '8000-eugenegwebu-restaurantb-3tht2rsvjmc.ws-eu110.gitpod.io',
+ALLOWED_HOSTS = [ '8000-eugenegwebu-restaurantb-3tht2rsvjmc.ws-eu111.gitpod.io',
 'pp4-restaurant-booking-f8fec4683622.herokuapp.com']
 
 
@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'crispy_forms',
     'crispy_bootstrap5',
+    'booking_info',
     'booking_system',
     'contact',
     'menu',

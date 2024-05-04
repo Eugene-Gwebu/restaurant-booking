@@ -2,10 +2,20 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.db.models import IntegerField, Model
 from django.core.validators import MaxValueValidator, MinValueValidator
+from booking_info.models import Profile
 
 # Create your models here.
 
 class Booking(models.Model):
+
+    # def get_default_profile():
+    #     # Get the superuser 'eugene'
+    #     superuser = User.objects.get(username='eugene')
+    #     # Get or create the associated profile
+    #     profile, created = Profile.objects.get_or_create(user=superuser)
+    #     return profile
+    
+    guest = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
     first_name = models.CharField(default='Name', max_length=200)
     last_name = models.CharField(default='Surname', max_length=200)
     email = models.EmailField(default='example@example.com', max_length=200)
