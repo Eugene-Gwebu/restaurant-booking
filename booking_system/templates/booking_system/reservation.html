@@ -12,7 +12,7 @@
       {% for booking in bookings %}
       <div id="booking{{ booking.id }}">
         <ul>
-                       
+                    
           <li>
           {{ booking.first_name }} | {{ booking.time }} | {{ booking.date }} | {{ booking.time }}
           <!-- Cancel booking option -->                 
@@ -22,14 +22,15 @@
       <form action="{% url 'cancel_booking' booking.id %}" method="post">
         {% csrf_token %}
         <div>
-          <button type="submit" class="btn btn-delete">Cancel</button>
-        </div>
+          <button type="submit" class="btn btn-delete" booking_id="{{ booking.id }}">Cancel</button>
+        </div>  
       </form>
       
       {% endfor %}
     </div>
   </div>
 </div>
+
 
 {% endblock content %}
 

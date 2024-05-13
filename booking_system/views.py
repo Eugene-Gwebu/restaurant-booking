@@ -24,11 +24,12 @@ def home(request):
 
 @login_required
 def booking_form(request):
+
     if request.method == "POST":
         confirm_booking_form = ConfirmBookingForm(data=request.POST)
         if confirm_booking_form.is_valid():
             booking = confirm_booking_form.save(commit=False)
-            profile = request.user
+            booking.guest =request.user
             booking.save()
 
             messages.success(request, 'Your booking was submitted successfully, and will be approved shortly!')  
@@ -46,12 +47,14 @@ def booking_form(request):
 
 @login_required
 def confirmed_booking(request):
-    profile = request.user
-    bookings = Booking.objects.filter(approval=True)
-   
+
+    bookings = Booking.objects.filter(approval=True, guest = request.user)
+    guest = request.user
+
     return render(request, 'booking_system/reservation.html', 
     {
-        'bookings':bookings,
+        'guest': guest,
+        'bookings': bookings,
     })
 
 
@@ -62,25 +65,21 @@ def edit_booking(request, booking_id):
     """
     if request.method == "POST":
 
-        queryset = Booking.objects.filter(approval=True)
-        booking = get_object_or_404(queryset, id=booking_id)
+        queryset = Booking.objects.filter(approval=True, guest = request.user)
         booking = get_object_or_404(Booking, pk=booking_id)
         confirm_booking_form = ConfirmBookingForm(data=request.POST, instance=booking)
         
-        if confirm_booking_form.is_valid() and booking.profile == request.user.profile:
-            confirm_booking_form.save(commit=False)
+        if confirm_booking_form.is_valid() and booking.guest == request.user:
+            booking = confirm_booking_form.save(commit=False)
+            booking.booking = booking
             booking.approval = False
-            confirm_booking_form.save()
+            booking.save()
             messages.success(request, 'Your Booking Has Been Updated!')
             
         else:
             messages.error(request, 'Error updating booking!')
- 
-    return render(request, 'booking_system/reservation.html', 
-    {
-        'booking': booking,
-        'confirm_booking_form': confirm_booking_form,
-    })
+
+    return HttpResponsoRedirect(reverse('reservation.html', {}))
 
 
 @login_required
@@ -88,20 +87,17 @@ def cancel_booking(request, booking_id):
     """
     view to cancel a booking
     """
-    queryset = Booking.objects.filter(approval=True)
-    booking = get_object_or_404(queryset, id=booking_id)
+    booking = get_object_or_404(Booking, pk=booking_id)
 
-    if booking.profile == request.user:
+    if request.method == "POST":
+        print("Received a POST request")
+        booking.guest == request.user
         booking.delete()
         messages.add_message(request, messages.SUCCESS, 'Your Booking was successfully deleted!')
-
     else:
         messages.add_message(request, messages.ERROR, 'Apologies, you cannot cancel this booking at the moment!')
-
-    return render(request,'booking_system/reservation.html', 
-    {
-        'booking': booking,
-    })
+    print("About to render template")
+    return HttpResponseRedirect(reverse('homepage'))
 
 
 
