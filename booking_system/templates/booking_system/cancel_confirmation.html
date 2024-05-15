@@ -14,7 +14,7 @@
                 {% csrf_token %}
                 <div>
                     Are you sure you want to cancel this booking?
-                    <div>{{ booking.first_name }} | {{ booking.time }} | {{ booking.date }} | {{ booking.time }}</div>
+                    <div>{{ booking.first_name }} | {{ booking.time }} | {{ booking.date }} | For: {{ booking.places }}</div>
                 </div>
                 
                 <button type="submit" class="btn btn-primary btn-block">Confirm</button>

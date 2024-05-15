@@ -32,6 +32,8 @@ def booking_form(request):
                 "Your booking was submitted successfully, and will be approved shortly!",
             )
 
+            return redirect(reverse("homepage"))
+
     confirm_booking_form = ConfirmBookingForm()
 
     return render(
@@ -48,7 +50,7 @@ def confirmed_booking(request):
     """
     View to display booking details
     """
-    bookings = Booking.objects.filter(approval=True, guest=request.user)
+    bookings = Booking.objects.filter(guest=request.user)
     guest = request.user
 
     return render(
@@ -105,7 +107,7 @@ def cancel_booking(request, booking_id):
     if request.method == "POST":
         booking.delete()
         messages.add_message(
-            request, messages.SUCCESS, "Your Booking was successfully deleted!"
+            request, messages.SUCCESS, "Your Booking was successfully cancelled!"
         )
         return redirect(reverse("homepage"))
 

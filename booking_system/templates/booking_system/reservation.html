@@ -10,24 +10,29 @@
       <h4 class="text-center">Confirmed Booking</h4>
       <!-- Display the user's bookings -->
       {% for booking in bookings %}
-      <div id="booking{{ booking.id }}">
-        <ul>
-                    
-          <li>
-          {{ booking.first_name }} | {{ booking.time }} | {{ booking.date }} | {{ booking.time }}
-          <!-- Cancel booking option -->                 
-          </li>
-        </ul>
-      </div> 
-      <form action="{% url 'cancel_booking' booking.id %}">
-        <div>
-          <button type="submit" class="btn btn-delete" booking_id="{{ booking.id }}">Cancel</button>
+      <div class="{% if not booking.approval and booking.guest == user %} faded{% endif %}">
+        <div id="booking{{ booking.id }}">
+          <ul class="font-weight-bold">                
+            <li>
+            {{ booking.first_name }} | {{ booking.time }} | {{ booking.date }} | For: {{ booking.places }}                
+            </li>
+          </ul>
         </div> 
-      </form>
-      <form action="{% url 'edit_booking' booking.id %}">
-        <button class="btn btn-edit" booking_id="{{ booking.id }}">Edit</button>
-      </form>
-      {% endfor %}
+        {% if not booking.approval and booking.guest == user %}
+        <p class="approval">This booking is awaiting approval</p>
+        {% endif %}
+        <!-- Cancel booking option -->
+        <form action="{% url 'cancel_booking' booking.id %}">
+          <div>
+            <button type="submit" class="btn btn-delete" booking_id="{{ booking.id }}">Cancel Booking</button>
+          </div> 
+        </form>
+        <!-- Update booking option -->
+        <form action="{% url 'edit_booking' booking.id %}">
+          <button class="btn btn-edit" booking_id="{{ booking.id }}">Update Booking</button>
+        </form>
+        {% endfor %}
+      </div>
     </div>
   </div>
 </div>
