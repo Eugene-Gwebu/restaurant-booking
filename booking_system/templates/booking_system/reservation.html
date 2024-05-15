@@ -10,8 +10,8 @@
       <h4 class="text-center">Confirmed Booking</h4>
       <!-- Display the user's bookings -->
       {% for booking in bookings %}
-      <div class="{% if not booking.approval and booking.guest == user %} faded{% endif %}">
-        <div id="booking{{ booking.id }}">
+      <div>
+        <div class="{% if not booking.approval and booking.guest == user %} faded{% endif %}" id="booking{{ booking.id }}">
           <ul class="font-weight-bold">                
             <li>
             {{ booking.first_name }} | {{ booking.time }} | {{ booking.date }} | For: {{ booking.places }}                
