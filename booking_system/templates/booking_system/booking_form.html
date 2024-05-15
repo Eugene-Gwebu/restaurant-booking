@@ -21,34 +21,4 @@
   </div>
 </div>
 
-<!-- Modal to edit the booking -->
-
-
-
 {% endblock %}
-
-{% comment %}
-<!-- Modal to edit the booking -->
-
-  <div class="modal fade" id="BookingEditModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-scrollable">
-      <div class="modal-content">
-        <div class="modal-header justify-content-center">
-          <h5 class="modal-title" id="exampleModalLabel">Change Your Booking Information</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          {% include 'booking_system/edit_booking.html' %}
-        </div>
-      </div>
-    </div>
-  </div>
-
-<div class="col-md-4 .ms-auto">
-  <!-- Button trigger modal -->
-  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#BookingEditModal">
-    Edit Booking
-  </button>
-</div>
-
-{% endcomment %}
