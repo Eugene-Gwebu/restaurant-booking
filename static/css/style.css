@@ -1,168 +1,138 @@
-.modal-header {
-    display: grid;
-    flex-shrink: 0;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1rem 1rem;
-    border-bottom: 1px solid #dee2e6;
-    border-top-left-radius: calc(.3rem - 1px);
-    border-top-right-radius: calc(.3rem - 1px);
-}
 
+/* Body */
 
 body {
     background-color: #F9FAFC;
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+    color: #445261;
+
 }
 
-.brand {
-    font-family: Lato, sans-serif;
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: #4A4A4F;
+
+/* Headers */
+
+.banner-header {
+    color: azure;
+
 }
 
-.red-o {
-    color: #E84610;
+.block-divider {
+    height: 5px;
+    color: black;
 }
 
-.thin {
-    font-weight: 300;
+/* Containers */
+.banner{
+    width: 100vh;
+    background-color:transparent;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
+
+
+.home-container {
+    
+
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-content: center;
+
+    background: url(../css/images/spread.jpg.jpg) no-repeat bottom right fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+
+.menu-container {
+    padding-top: 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.cancel-container {
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logout-container {
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.edit-container{
+    padding-top: 5rem;
+    width: 70%
+}
+
+.booking-details-container {
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home-container {
+   
+    display: flex;
+    align-items: center;
+    justify-items: center;
+}
+
+.login-container {
+    height: 100vh;
+}
+   
+
+.signup-row, .login-row {
+    padding-top: 10rem;
+}
+
+.cancel-row {
+    width: 60rem;
+}
+
+.overlay-row {
+    z-index: 1;
+}
+
+
+.update {
+    flex: 0 0 auto;
+    width: 95%;
+
+
+
+
+/* Colors */
+
 
 .light-bg {
     background-color: #fff;
 }
 
 .dark-bg {
-    background-color: #445261;
+    background-color: #035fc1;
 }
 
-.main-bg {
-    background-color: #F9FAFC;
-}
-
-.card {
-    border: none;
-    background-color: transparent;
-}
-
-.image-container {
-    position: relative;
-}
-
-.image-flash {
-    position: absolute;
-    bottom: 5%;
-    min-width: 30%;
-    left: -2px;
-    background-color: #188181;
-}
-
-.scale {
-    width: 100%;
-    height: auto;
-}
-
-.author {
-    color: white;
-    margin: 4px;
-    text-transform: uppercase;
-}
-
-.masthead {
-    margin-top: 10px;
-    overflow: hidden;
-    position: relative;
-    display: inline-block;
-    height: 33vh;
-    width: 100%;
-}
-
-.masthead-text {
-    background-color: #445261;
-    color: white;
-    position: relative;
-}
-
-.masthead-image {
-    position: relative;
-    overflow: hidden;
-}
-
-.masthead-image:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 90%;
-    height: 100%;
-    width: 150%;
-    background: #445261;
-    -webkit-transform: skew(15deg);
-    -moz-transform: skew(15deg);
-    transform: skew(15deg);
-    z-index: 100;
-}
-
-.post-link {
-    text-decoration: none;
-    color: #445261;
-}
-
-.post-link:hover,
-.page-link {
-    color: #E84610;
-}
-
-.post-title {
-    margin-top: 10%;
-    margin-left: 5%;
-}
-
-.post-subtitle {
-    margin-left: 5%;
-    color: lightgray;
-}
-
-.btn-signup,
-.btn-edit {
-    background-color: #188181;
-    color: #fff;
-}
-
-.btn-signup:hover,
-.btn-signup:active {
-    background-color: #fff;
-    color: #23BBBB;
-}
-
-.link {
-    color: #23BBBB;
-    text-decoration: none;
-}
-
-.link:hover,
-.link:active {
-    color: #445261;
-    text-decoration: underline;
-}
-
-.btn-like {
-    color: #E84610;
-    border: none;
-    background: transparent;
-}
-
-.btn-delete {
-    color: #fff;
-    background: #E84610;
-}
-
-.btn-like:hover,
-.btn-like:active {
-    color: #E84610;
-    background: transparent;
-    border: none;
-}
 
 .faded {
     color: rgb(172, 175, 175);
@@ -172,12 +142,50 @@ body {
     color: rgb(222, 146, 168);
 }
 
-/* .my-5 {
-    margin-top: 3rem !important;
-    margin-bottom: 3rem !important;
+.jumbotron{
+    margin-top: 200px;
 }
 
-.col-md-6 {
-    flex: 0 0 auto;
-    width: 30%;
-} */
+/* Button Colors */
+
+
+
+.btn-signup,
+.btn-edit {
+    background-color: #181d81;
+    color: #fff;
+}
+
+.btn-signup:hover,
+.btn-signup:active {
+    background-color: #fff;
+    color: #181d81;
+}
+
+.link {
+    color: black;
+    text-decoration: none;
+}
+
+.link:hover,
+.link:active {
+    color: black;
+    text-decoration: underline;
+}
+
+
+.btn-delete {
+    color: #181d81;
+    background: #fff;
+}
+
+
+.footer {
+    width: 100%;
+    background-color: #445261;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+}

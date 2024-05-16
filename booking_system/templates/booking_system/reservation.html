@@ -4,33 +4,40 @@
 
 {% block content %}
 
-<div class="container mt-5 ">
+<div class="container booking-details-container">
   <div class="row justify-content-center">
-    <div class="col-md-6">
+    <div class="col-md-6 update">
       <h4 class="text-center">Confirmed Booking</h4>
+
       <!-- Display the user's bookings -->
       {% for booking in bookings %}
-      <div>
-        <div class="{% if not booking.approval and booking.guest == user %} faded{% endif %}" id="booking{{ booking.id }}">
-          <ul class="font-weight-bold">                
-            <li>
+      <div class="{% if not booking.approval and booking.guest == user %} faded{% endif %}" id="booking{{ booking.id }}">
+        <ul class="font-weight-bold">                
+          <li>
             {{ booking.first_name }} | {{ booking.time }} | {{ booking.date }} | For: {{ booking.places }}                
-            </li>
-          </ul>
-        </div> 
-        {% if not booking.approval and booking.guest == user %}
-        <p class="approval">This booking is awaiting approval.</p>
-        {% endif %}
-        <!-- Cancel booking option -->
+          </li>
+        </ul>
+      </div> 
+
+      {% if not booking.approval and booking.guest == user %}
+      <p class="approval">
+        This booking is awaiting approval.
+      </p>
+      {% endif %}
+
+      <!-- Cancel booking option -->
+      <div class="d-flex justify-content-between mb-2">
         <form action="{% url 'cancel_booking' booking.id %}">          
           <button type="submit" class="btn btn-delete" booking_id="{{ booking.id }}">Cancel Booking</button>        
         </form>
+
         <!-- Update booking option -->
         <form action="{% url 'edit_booking' booking.id %}">
           <button class="btn btn-edit" booking_id="{{ booking.id }}">Update Booking</button>
         </form>
-        {% endfor %}
       </div>
+      {% endfor %}
+
     </div>
   </div>
 </div>
