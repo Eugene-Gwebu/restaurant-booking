@@ -24,10 +24,10 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-6w0h540-+3j8uat*qb3zw$v3zu*n_ig$1r4leq(pl0on)d!$9-'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [ '8000-eugenegwebu-restaurantb-3tht2rsvjmc.ws-eu111.gitpod.io',
 'pp4-restaurant-booking-f8fec4683622.herokuapp.com']
