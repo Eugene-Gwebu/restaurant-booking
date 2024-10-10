@@ -5,15 +5,32 @@
 {% block content %}
 
 <div class="container menu-container">
+    <div class="row drinks-image-container">
+        <div class="col-12">
+            <img src="{% static 'css/images/juice.jpg' %}" class="img-fluid drinks-image" alt="Three Colorful fruitjuice classes">
+        </div>
+    </div>
     <div class="row menu-row">
         <div class="col-md-6">
             <section class="drinks">
                 <h2>Drinks</h2>
                 <ul class="list-unstyled">
-                    <li>Coffee - $2.50</li>
-                    <li>Tea - $2.00</li>
-                    <li>Soda - $1.75</li>
-                    <li>Mineral Water - $1.50</li>
+                    <li class="menu-item">
+                        <span class="item-name">Coffee</span>
+                        <span class="item-price">$2.50</span>
+                    </li>
+                    <li class="menu-item">
+                        <span class="item-name">Tea</span> 
+                        <span class="item-price">$2.00</span>
+                    </li>
+                    <li class="menu-item">
+                        <span class="item-name">Soda</span>
+                        <span class="item-price">$1.75</span>
+                    </li>
+                    <li class="menu-item">
+                        <span class="item-name">Mineral Water</span>
+                        <span class="item-price">$1.50</span>
+                    </li>
                 </ul>
             </section>
         </div>
@@ -21,10 +38,22 @@
             <section class="drinks">
                 <h2>Cocktails</h2>
                 <ul class="list-unstyled">
-                    <li>Mosco Mule - $12.50</li>
-                    <li>Mojito - $12.00</li>
-                    <li>Apero Spritz - $12.50</li>
-                    <li>Old Fashioned - $15.00</li>
+                    <li class="menu-item">
+                        <span class="item-name">Mosco Mule</span>
+                        <span class="item-price">$12.50</span>
+                    </li>
+                    <li class="menu-item">
+                        <span class="item-name">Mojito</span>
+                        <span class="item-price">$12.00</span>
+                    </li>
+                    <li class="menu-item">
+                        <span class="item-name">Apero Spritz</span> 
+                        <span class="item-price">$12.50</span>
+                    </li>
+                    <li class="menu-item">
+                        <span class="item-name">Old Fashioned</span>
+                        <span class="item-price">$15.00</span>
+                    </li>
                 </ul>
             </section>
         </div>
@@ -39,21 +68,45 @@
             <section class="drinks">
                 <h2>Pasta</h2>
                 <ul class="list-unstyled">
-                    <li>Carbonara - $12.50</li>
-                    <li>Bolognese - $10.00</li>
-                    <li>Parmesan - $14.00</li>
-                    <li>Pesto - $10.50</li>
+                    <li class="menu-item">
+                        <span class="item-name">Carbonara</span>
+                        <span class="item-price">$12.50</span>
+                    </li>
+                    <li class="menu-item">
+                        <span class="item-name">Bolognese</span>
+                        <span class="item-price">$10.00</span>
+                    </li>
+                    <li class="menu-item">
+                        <span class="item-name">Parmesan</span>
+                        <span class="item-price">$14.00</span>
+                    </li>
+                    <li class="menu-item">
+                        <span class="item-name">Pesto</span>
+                        <span class="item-price">$10.50</span>
+                    </li>
                 </ul>
             </section>
         </div>
         <div class="col-md-6">
             <section>
-                <h2>Sandwiches</h2>
+                <h2>Burger + Fries</h2>
                 <ul class="list-unstyled">
-                    <li>Peanut Butter & Jelly - $5.50</li>
-                    <li>Ham & Cheese  - $4.50</li>
-                    <li>Chicken & Mayo - $4.50</li>
-                    <li>Meatloaf - $6.00</li>
+                    <li class="menu-item">
+                        <span class="item-name">Classic Cheese</span>
+                        <span class="item-price">$11.50</span>
+                    </li>
+                    <li class="menu-item">
+                        <span class="item-name">Bacon & Cheese</span> 
+                        <span class="item-price">$12.50</span>
+                    </li>
+                    <li class="menu-item">
+                        <span class="item-name">Classic Chicken</span>
+                        <span class="item-price">$14.50</span>
+                    </li>
+                    <li class="menu-item">
+                        <span class="item-name">Double Cheese</span> 
+                        <span class="item-price">$16.00</span>
+                    </li>
                 </ul>
             </section>
         </div>
@@ -69,10 +122,22 @@
             <section>
                 <h2>Fruits</h2>
                 <ul class="list-unstyled">
-                    <li>Kiwi - $2.50</li>
-                    <li>Apple - $1.50</li>
-                    <li>Banana - $1.50</li>
-                    <li>Peach - $2.50</li>
+                    <li class="menu-item">
+                        <span class="item-name">Kiwi</span>
+                        <span class="item-price">$2.50</span>
+                    </li>
+                    <li class="menu-item">
+                        <span class="item-name">Apple</span>
+                        <span class="item-price">$1.50</span>
+                    </li>
+                    <li class="menu-item">
+                        <span class="item-name">Banana</span>
+                        <span class="item-price">$1.50</span>
+                    </li>
+                    <li class="menu-item">
+                        <span class="item-name">Peach</span>
+                        <span class="item-price">$2.50</span>
+                    </li>
                 </ul>
             </section>     
         </div>
@@ -80,10 +145,22 @@
             <section>
                 <h2>Desserts</h2>
                 <ul class="list-unstyled">
-                    <li>Chocolate Cake - $4.50</li>
-                    <li>Apple Pie - $3.75</li>
-                    <li>Ice Cream - $3.00</li>
-                    <li>Cheesecake - $4.00</li>
+                    <li class="menu-item">
+                        <span class="item-name">Chocolate Cake</span>
+                        <span class="item-price">$4.50</span>
+                    </li>
+                    <li class="menu-item">
+                        <span class="item-name">Apple Pie</span>
+                        <span class="item-price">$3.75</span>
+                    </li>
+                    <li class="menu-item">
+                        <span class="item-name">Ice Cream</span>
+                        <span class="item-price">$3.00</span>
+                    </li>
+                    <li class="menu-item">
+                        <span class="item-name">Cheesecake</span>
+                        <span class="item-price">$4.00</span>
+                    </li>
                 </ul>
             </section>
         </div>

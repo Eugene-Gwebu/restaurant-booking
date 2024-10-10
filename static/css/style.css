@@ -172,8 +172,6 @@ body, html {
 }
 
 
-
-
 /* Colors */
 
 
@@ -198,8 +196,8 @@ body, html {
     margin-top: 200px;
 }
 
-/* Button Colors */
 
+/* Button Colors */
 
 
 .btn-signup,
@@ -242,6 +240,51 @@ body, html {
     bottom: 0;
 }
 
+
+/* Menu Styling */
+
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    font-size: 18px;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.item-name {
+    font-weight: bold;
+}
+
+.item-price {
+    color: #555;
+    text-align: right;
+    min-width: 80px;
+}
+
+
+.drinks-image-container {
+    height: 33vh;
+    overflow: hidden;
+}
+
+.drinks-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+}
+
+.menu-container {
+    padding-top: 0;
+    margin-top: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-row {
+    margin: 0;
+    padding-top: 0;
+}
 
 /* Small Screen Adjustments */
 @media (max-width: 768px) {
@@ -308,5 +351,19 @@ body, html {
     flex-wrap: nowrap;
     align-items: center;
     justify-content: space-between;
+    }
+
+    /* Menu Adjustments */
+
+    .menu-item {
+        font-size: 16px;
+    }
+
+    .item-price {
+        min-width: 60px;
+    }
+
+    .menu-container {
+        padding-top: 0;
     }
 }
